@@ -9,3 +9,12 @@
 </td>
 </tr>
 </table>
+
+Mabool is a retro game coded with the old Microsoft Basic 1.0, provided on the old Thomson 8 bits Computers.
+It's work on these machines:
+- MO5
+- MO6
+- TO7
+- TO7/70
+
+It can probably work on other Thomson machines of the time (TO8, TO9...). But this has not been tested.
