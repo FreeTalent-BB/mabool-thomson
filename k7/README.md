@@ -4,7 +4,7 @@ Find the DCMOTO emulator here: http://dcmoto.free.fr/emulateur/index.html
 
 <img src="https://user-images.githubusercontent.com/11832290/182225021-59e86036-4641-4baa-87e4-0dc2f3399426.png" style="width:25vw">
 
-Release 1 (August 1 2022): 
+Release 1 (August 1, 2022): 
 -------------------------
 - Title
 - 16 stages
