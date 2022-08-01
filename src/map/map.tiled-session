@@ -1,0 +1,66 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "map.tmx",
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "Tous les Fichiers (*)",
+    "fileStates": {
+        "F:/Programs/dcvg5k_20220226/dev/utils/map.tmx": {
+            "scale": 0.48390625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1241.9761059089442,
+                "y": 579.6577332902808
+            }
+        },
+        "F:/Programs/dcvg5k_20220226/dev/utils/sprites.tsx": {
+            "scaleInDock": 1
+        },
+        "map.tmx": {
+            "scale": 3,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 139.66666666666669,
+                "y": 127.16666666666669
+            }
+        },
+        "sprites.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.imagePath": "F:/Programs/dcvg5k_20220226/dev",
+    "map.fixedSize": false,
+    "map.height": 12,
+    "map.lastUsedExportFilter": "Fichiers de cartes JSON (*.json)",
+    "map.lastUsedFormat": "tmx",
+    "map.orientation": 1,
+    "map.tileHeight": 20,
+    "map.tileWidth": 16,
+    "map.width": 20,
+    "openFiles": [
+        "map.tmx"
+    ],
+    "project": "map.tiled-project",
+    "property.type": "string",
+    "recentFiles": [
+        "map.tmx",
+        "sprites.tsx",
+        "F:/Programs/dcvg5k_20220226/dev/utils/map.tmx"
+    ],
+    "tileset.embedInMap": true,
+    "tileset.lastUsedExportFilter": "Fichiers de tileset JSON (*.json)",
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.margin": 0,
+    "tileset.spacing": 0,
+    "tileset.tileSize": {
+        "height": 20,
+        "width": 16
+    },
+    "tileset.transparentColor": "#ff00ff",
+    "tileset.type": 0,
+    "tileset.useTransparentColor": false
+}

@@ -1,0 +1,71 @@
+;
+; Load the current level
+;
+#label load_level
+	If !LEVEL = 1 Then Restore @map1$
+	If !LEVEL = 2 Then Restore @map2$
+	If !LEVEL = 3 Then Restore @map3$
+	If !LEVEL = 4 Then Restore @map4$
+	If !LEVEL = 5 Then Restore @map5$
+	If !LEVEL = 6 Then Restore @map6$
+	If !LEVEL = 7 Then Restore @map7$
+	If !LEVEL = 8 Then Restore @map8$
+	If !LEVEL = 9 Then Restore @map9$
+	If !LEVEL = 10 Then Restore @map10$
+	If !LEVEL = 11 Then Restore @map11$
+	If !LEVEL = 12 Then Restore @map12$
+	If !LEVEL = 13 Then Restore @map13$
+	If !LEVEL = 14 Then Restore @map14$
+	If !LEVEL = 15 Then Restore @map15$
+	If !LEVEL = 16 Then Restore @map16$
+	
+	!MAP_POS = 1 : !NUM_LASER = 0
+#label read_data1
+	If !MAP_POS > 160 Then Goto @stop_read
+	
+#label read_data2
+	Read !NUM_TILES,!TILE_VALUE/
+	For !FOR_VAR = 0 To !NUM_TILES - 1 : !MAP( !MAP_POS + !FOR_VAR ) = !TILE_VALUE : Next !FOR_VAR
+	!MAP_POS = !MAP_POS + !NUM_TILES/
+
+	If !MAP_POS > 160 Then Goto @stop_read
+	Goto @read_data2/
+	Goto @read_data1
+
+#label stop_read
+;	For !FOR_VAR = 1 To 160
+;		Print Str$( !MAP( !FOR_VAR ) );
+;	Next !FOR_VAR
+;	End
+	Return
+
+;
+; Show the current level
+;
+#label show_level
+	Cls : Screen 0,0,0 : Attrb0,0/
+	!MAP_X = 3 : !MAP_Y = 2 : !NUM_STAR = 0 : !NUM_KEY = 0 : !MAP_POS = 1 : !ADR_DOOR = 0 : !ADR_PLAYER = 0 : !NUM_TELEPORTER = 1
+	Locate 12,24:Color7,0 /
+	Print "LOADING_STAGE...";/
+#label draw_line1
+	!COLUMN = 1
+		
+#label draw_line2
+
+	!TILE_VALUE = !MAP( !MAP_POS )
+	Locate !MAP_X,!MAP_Y:Color !LEVEL_COLOR,0  
+	If !TILE_VALUE = 0 Then Goto @next_tile
+	On_!TILE_VALUE_Goto_@tile_wall, @tile_ground, @tile_elevator, @tile_teleporter, @tile_broken, @tile_door_closed,@tile_switch_on,@tile_mabool_ground,@tile_star_ground,@tile_key_ground,@tile_bomb_ground, @tile_laserh, @tile_laserv, @tile_box
+	Goto @next_tile
+	
+#label next_tile	
+	!MAP_X = !MAP_X + 2 : !MAP_POS = !MAP_POS + 1/
+
+	!COLUMN = !COLUMN + 1
+	If !COLUMN = 17 Then !MAP_Y = !MAP_Y + 2 : !MAP_X = 3 : !COLUMN=1
+	If !MAP_POS < 160 Then Goto @draw_line2
+	
+	Locate 0,24 : Print SPC(39);/
+	Gosub @update_infos/
+	TXT1$ = ""/
+	Return

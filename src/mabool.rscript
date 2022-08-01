@@ -1,0 +1,45 @@
+;
+;  /$$      /$$  /$$$$$$  /$$$$$$$   /$$$$$$   /$$$$$$  /$$      
+; | $$$    /$$$ /$$__  $$| $$__  $$ /$$__  $$ /$$__  $$| $$      
+; | $$$$  /$$$$| $$  \ $$| $$  \ $$| $$  \ $$| $$  \ $$| $$      
+; | $$ $$/$$ $$| $$$$$$$$| $$$$$$$ | $$  | $$| $$  | $$| $$      
+; | $$  $$$| $$| $$__  $$| $$__  $$| $$  | $$| $$  | $$| $$      
+; | $$\  $ | $$| $$  | $$| $$  \ $$| $$  | $$| $$  | $$| $$      
+; | $$ \/  | $$| $$  | $$| $$$$$$$/|  $$$$$$/|  $$$$$$/| $$$$$$$$
+; |__/     |__/|__/  |__/|_______/  \______/  \______/ |________/
+;
+;                 Baptiste BIDEAUX (c)2022.
+;      https://github.com/FreeTalent-BB/mabool-thomson
+;
+
+; Convert PNG to user characters
+#img2char "source":"./graphics/sprites.png","m":"thomson","ns":0,"cl":"yes","o":"./inc/SPRITES.rscript"
+; Include files
+#INCLUDE inc.SPRITES
+
+; Disable the BEEP of the keyboard
+IF PEEK(0)=32 THEN POKE &H6073,1 ELSE POKE &H2019,PEEK(&H2019) OR 8
+
+;Cls : Screen 7,0,0
+;For R = 0 To 86
+;	Print Str$(R)+"=";Gr$(R);
+;Next R
+;end
+
+; Draw Title and rules
+Gosub @draw_title
+Gosub @draw_rules
+
+; Main loop
+#label root
+	
+	; Wait a pressing on the fire button or space bar
+	If Inkey$ = "_" Then Goto @load_game
+	Goto @root
+
+#INCLUDE inc.TITLE
+
+; Load the game
+#label load_game
+Cls: Color 1, 0 : Attrb0,1 : Locate 14,9 : Print"LOADING_GAME" 
+Locate 0,18 : Run "MAIN"

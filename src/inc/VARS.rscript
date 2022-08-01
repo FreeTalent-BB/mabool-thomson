@@ -1,0 +1,65 @@
+#var adr_player
+#var adr_door 
+#var num_teleporter
+#var teleport_value
+#var teleport
+#var num_star
+#var num_laser
+#var laser_x
+#var laser_y
+#var laser
+#var level_color
+#var level
+#var num_bomb
+#var break$
+#var num_key
+#var map_x
+#var map_y
+#var map_pos
+#var map  
+#var player_x
+#var player_y
+#var score
+#var lives
+#var door_x
+#var door_y
+#var tile_value
+#var txt1$
+#var txt2$
+#var txt3$
+#var moves
+#var key_x
+#var key_y
+#var key_action
+#var num_tiles 
+#var for_var
+#var column
+
+#const c_wall=1
+#const c_ground=2
+#const c_elevator=3
+#const c_teleporter=4
+#const c_broken=5
+#const c_door_closed=6
+#const c_door_opened=26
+#const c_switch_on=7
+#const c_switch_off=27
+#const c_mabool_ground=8
+#const c_mabool_elevator=28
+#const c_mabool_teleporter=38
+#const c_mabool_broken=58
+#const c_star_ground=9
+#const c_key_ground=10
+#const c_bomb_ground=11
+#const c_laserh=12
+#const c_laserv=13
+#const c_box=14
+#const c_max_levels=16
+
+Dim !MAP( 160 ) : Dim !TELEPORT( 6 ) : Dim !LASER_X(20),!LASER_Y(20),!LASER(20)
+!BREAK$ = Chr$( 8 ) + Chr$( 8 ) + Chr$( 10 )/
+!LEVEL_COLOR = 1 : !LEVEL = 1/
+!ADR_PLAYER = 0: !PLAYER_X = 0 : !PLAYER_Y = 0
+!SCORE = 0 : !LIVES = 4 : !ADR_DOOR = 0 : !DOOR_X = 0 : !DOOR_Y = 0/ 
+!NUM_STAR = 0 : !NUM_KEY = 0 : !NUM_BOMB = 0 :!NUM_LASER = 0
+ 

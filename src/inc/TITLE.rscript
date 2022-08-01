@@ -1,0 +1,51 @@
+#label title
+DATA 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+DATA 1,2,2,2,1,2,2,2,2,1,1,1,1,2,1,1,2,2,2,2,2,2,1,1,2,2,2,2,1,2,2,2,2,1,1,2,2,1,1,1
+DATA 1,2,2,2,2,2,2,2,2,2,1,1,2,2,2,1,0,2,2,0,2,2,2,1,2,2,0,2,2,0,2,0,2,2,1,2,2,1,1,1
+DATA 1,0,2,2,0,2,2,0,2,2,1,2,2,0,2,2,1,2,2,2,2,2,0,1,2,2,2,2,2,1,2,2,2,2,1,2,2,1,2,1
+DATA 1,1,2,2,1,2,2,1,2,2,1,2,2,2,2,2,2,1,2,0,2,2,2,1,2,2,2,2,2,1,2,2,2,2,1,2,2,2,2,1
+DATA 1,1,2,2,1,2,2,1,2,2,1,2,2,2,2,2,2,2,1,2,2,2,0,1,2,2,2,2,0,2,2,2,2,0,1,2,2,2,0,1
+DATA 1,1,0,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,1,0,0,0,0,1,1,0,0,0,1,1
+DATA 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+
+#label draw_title
+	RESTORE @title
+	Cls : Screen0,0,0 : X = 0 : Y = 0
+	For R = 1 To 320
+		Read A : LocateX,Y
+		If A = 0 Then Color 4,0 : Print Gr$(2);
+		If A = 1 Then Color 6,0 : Print Gr$(2);
+		If A = 2 Then Color 7,0 : Print Gr$(84);
+		
+		X = X + 1:If X = 40 Then X=0:Y=Y+1
+	Next R
+
+	Color 3,0 : Locate 14,8 : Print Chr$(20)+"PRESS_SPACE";/
+	Color 7,0 : Locate 8,24 : Print Chr$(20)+"BAPTISTE_BIDEAUX_(c)2022.";
+	Return
+
+#label draw_rules
+
+	Color 7,0 : Locate2,10 : Print Gr$( 19 )+Gr$( 20 )+!BREAK$+Gr$( 57 )+Gr$( 58 )
+	Locate1,13 : Print Gr$( 27 )+Gr$( 28 )+!BREAK$+Gr$( 65 )+Gr$( 66 )/
+	Locate3,13 : Print Gr$( 31 )+Gr$( 32 )+!BREAK$+Gr$( 69 )+Gr$( 70 )
+	Locate2,16 : Print Gr$( 9 )+Gr$( 10 )+!BREAK$+Gr$( 47 )+Gr$( 48 )/
+	Locate 2,19 : Print Gr$( 35 )+Gr$( 36 )+!BREAK$+Gr$( 73 )+Gr$( 74 )
+	
+	Locate22,10 : Print Gr$( 3 )+Gr$( 4 )+!BREAK$+Gr$( 41 )+Gr$( 42 )/
+	Locate22,13 : Print Gr$( 5 )+Gr$( 6 )+!BREAK$+Gr$( 43 )+Gr$( 44 )
+	Locate22,16 : Print Gr$( 7 )+Gr$( 8 )+!BREAK$+Gr$( 45 )+Gr$( 46 )/
+	locate22, 19 : Print Gr$( 13 )+Gr$( 14 )+!BREAK$+Gr$( 51 )+Gr$( 52 )
+
+	Color6,0: Locate 6, 10: PrintChr$(20)+"MABOOL";:Color 3,0: Locate 6, 11:PrintChr$(20)+"SPHERICAL_HERO";/
+	Color6,0: Locate 6,13: PrintChr$(20)+"STARS_&_KEY";:Color 3,0: Locate 6,14:PrintChr$(20)+"GET_THEM_ALL";
+	Color6,0: Locate 6,16: PrintChr$(20)+"EXIT_DOOR";/
+	Color6,0: Locate 6,19: PrintChr$(20)+"BOMB";:Color 3,0: Locate 6,20:PrintChr$(20)+"TO_DESTROY";:Locate 6,21:PrintChr$(20)+"WALLS";:
+	
+	Color6,0: Locate 26,10: PrintChr$(20)+"ELEVATOR";/
+	Color6,0: Locate 26,13: PrintChr$(20)+"TELEPORTER";
+	Color6,0: Locate 26,16: PrintChr$(20)+"BROKEN_GROUND";/
+	Color6,0: Locate 26,19: PrintChr$(20)+"LASER_SWITCH";
+	
+	Return
+	
